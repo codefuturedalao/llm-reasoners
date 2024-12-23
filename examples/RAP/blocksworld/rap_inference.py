@@ -112,8 +112,8 @@ if __name__ == '__main__':
     def llama_hf_main(
             llama_path = '/path/to/Llama-2-7b-hf',
             peft_path = None,
-            prompt_path: str = 'examples/CoT/blocksworld/prompts/prompt.json',
-            data_path: str = 'examples/CoT/blocksworld/data/step_4.json',
+            prompt_path: str = 'examples/CoT/blocksworld/prompts/pool_prompt_v2_step_4.json',
+            data_path: str = 'examples/CoT/blocksworld/data/full_data/step_4.json',
             disable_log: bool = False,
             config_file: str = "examples/CoT/blocksworld/data/bw_config.yaml",
             domain_file: str = "examples/CoT/blocksworld/data/generated_domain.pddl",
@@ -224,4 +224,4 @@ if __name__ == '__main__':
                lm_plan_file=lm_plan_file, **kwargs)
 
 
-    fire.Fire(llama2_main) # user will need to switch the model in the code
+    fire.Fire(llama_hf_main) # user will need to switch the model in the code

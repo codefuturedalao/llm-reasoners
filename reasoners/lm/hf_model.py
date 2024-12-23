@@ -86,13 +86,15 @@ class HFModel(LanguageModel):
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_pth,
                 device_map="auto",
-                trust_remote_code=True
+                trust_remote_code=True,
+                cache_dir="/data/hacksang/"
             )
         if peft_pth is not None:
             self.model = PeftModel.from_pretrained(
                 self.model, 
                 peft_pth,
-                torch_dtype=torch.float16
+                torch_dtype=torch.float16,
+                cache_dir="/data/hacksang/"
             )
         
         self.max_new_tokens = max_new_tokens
